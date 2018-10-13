@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Image,
-  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,7 +9,15 @@ import {
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    title: 'Vegas',
+    headerStyle: {
+        backgroundColor: '#1A1A1D',
+    },
+    headerTitleStyle: {
+        color: '#C3073F',
+        textAlign: 'center',
+        flex: 1
+    }
   };
 
   render() {
