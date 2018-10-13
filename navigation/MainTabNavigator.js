@@ -4,6 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
+import MenuScreen from '../screens/MenuScreen';
 import MapScreen from '../screens/MapScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 
@@ -26,7 +27,7 @@ HomeStack.navigationOptions = {
 };
 
 const MenuStack = createStackNavigator({
-  Menu: MapScreen,
+  Menu: MenuScreen,
 });
 
 MenuStack.navigationOptions = {
