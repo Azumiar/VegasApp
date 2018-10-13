@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "packagerPort": 19003,
+  "packagerPid": 5320,
+  "expoServerNgrokUrl": "https://qr-z4a.azumiar.vegasapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.qr-z4a.azumiar.vegasapp.exp.direct",
+  "ngrokPid": 5343
 }

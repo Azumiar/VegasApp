@@ -19,6 +19,45 @@ export default class HomeScreen extends React.Component {
         <View style={styles.header}>
           <Text style={styles.logo}>Vegas</Text>
         </View>
+
+        <ScrollView style={styles.scroll}>
+          <View style={styles.newsCard}>
+            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
+            <Text style={styles.newsCardText}>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            </Text>
+          </View>
+          <View style={styles.newsCard}>
+            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
+            <Text style={styles.newsCardText}>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            </Text>
+          </View>
+          <View style={styles.newsCard}>
+            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
+            <Text style={styles.newsCardText}>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            </Text>
+          </View>
+          <View style={styles.newsCard}>
+            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
+            <Text style={styles.newsCardText}>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            </Text>
+          </View>
+          <View style={styles.newsCard}>
+            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
+            <Text style={styles.newsCardText}>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            </Text>
+          </View>
+          <View style={styles.newsCard}>
+            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
+            <Text style={styles.newsCardText}>
+              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+            </Text>
+          </View>
+        </ScrollView>
       </View>
     );
   }
@@ -27,21 +66,43 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#545156',
+    backgroundColor: '#6e6e72',
+  },
+  scroll: {
+    padding: 15,
+    paddingTop: 0
   },
   header: {
     marginTop: 24,
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#363438',
-    shadowOpacity: 0.75,
-    shadowRadius: 5,
-    shadowColor: 'red',
-    shadowOffset: { height: 0, width: 0 },
+    backgroundColor: '#1A1A1D',
+    elevation: 3,
   },
   logo: {
     fontSize: 26,
-    color: '#fff',
+    color: '#C3073F',
+  },
+  newsCard: {
+    flex: 1,
+    marginTop: 7.5,
+    marginBottom: 7.5,
+    borderColor: '#666',
+    borderWidth: 1,
+    borderRadius: 15,
+  },
+  newsCardImage: {
+    width: '100%',
+    height: 200,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  newsCardText: {
+    padding: 10,
+    backgroundColor: '#1a1a1d',
+    color: '#efefef',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15
   }
 });

@@ -72,4 +72,11 @@ export default createBottomTabNavigator({
   ProfileStack,
   MenuStack,
   MapStack,
+}, {
+  tabBarOptions: {
+    style: {
+      backgroundColor: '#1A1A1D'
+    },
+    activeTintColor: '#C3073F',
+  }
 });
