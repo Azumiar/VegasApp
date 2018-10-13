@@ -4,8 +4,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import MapScreen from '../screens/MapScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 
 const HomeStack = createStackNavigator({
@@ -27,7 +26,7 @@ HomeStack.navigationOptions = {
 };
 
 const MenuStack = createStackNavigator({
-  Menu: LinksScreen,
+  Menu: MapScreen,
 });
 
 MenuStack.navigationOptions = {
@@ -55,7 +54,7 @@ ProfileStack.navigationOptions = {
 };
 
 const MapStack = createStackNavigator({
-  Map: SettingsScreen,
+  Map: MapScreen,
 });
 
 MapStack.navigationOptions = {
