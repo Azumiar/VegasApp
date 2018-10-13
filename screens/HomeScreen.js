@@ -23,10 +23,6 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.logo}>Vegas</Text>
-        </View>
-
         <ScrollView style={styles.scroll}>
           <View style={styles.newsCard}>
             <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
@@ -78,18 +74,6 @@ const styles = StyleSheet.create({
   scroll: {
     padding: 15,
     paddingTop: 0
-  },
-  header: {
-    marginTop: 24,
-    height: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#1A1A1D',
-    elevation: 3,
-  },
-  logo: {
-    fontSize: 26,
-    color: '#C3073F',
   },
   newsCard: {
     flex: 1,
