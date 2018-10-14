@@ -57,12 +57,20 @@ export default class MapScreen extends React.Component {
                     flex: 1
                 }}
                 initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421
-                }}
-            />
+                    latitude: 44.9532149,
+                    longitude: 34.1021065,
+                    latitudeDelta: 0.007,
+                    longitudeDelta: 0.007
+                }}>
+                    <MapView.Marker
+                        key={1}
+                        coordinate={{ 
+                            latitude: 44.9532149,
+                            longitude: 34.1021065,
+                        }}
+                        title={"Vegas"}
+                    />
+            </MapView>
         </View>
       </View>
     );
