@@ -20,12 +20,18 @@ export default class ProfileScreen extends React.Component {
     }
   };
 
+  state = {
+    loading: true,
+    avatarUrl: null,
+    name: null,
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.userInfo}>
-            <Image style={styles.avatar} source={{ uri: 'https://pp.userapi.com/6wSmA8oVz8SOXRoZ931FC4emq5kds8Gz8Slgtw/6pJJry1eveg.jpg?ava=1' }}/>
-            <Text style={styles.userName}>Бекир Шабутов</Text>
+            <Image style={styles.avatar} source={{ uri: this.loading ? '' : this.state.avatarUrl }}/>
+            <Text style={styles.userName}>{this.loading ? 'Загрузка...' : this.state.name}</Text>
         </View>
         <View style={styles.bonus}>
           <View style={styles.row}>
@@ -62,6 +68,18 @@ export default class ProfileScreen extends React.Component {
         </View>
       </View>
     );
+  }
+
+  componentDidMount() {
+    fetch('http://192.168.0.103:3000/user')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          loading: false,
+          name: res.name,
+          avatarUrl: res.avatarUrl,
+        })
+      });
   }
 }
 
