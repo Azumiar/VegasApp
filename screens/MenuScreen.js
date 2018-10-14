@@ -1,49 +1,65 @@
 import React from 'react';
 import {
   Image,
-  Button,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 
+import {
+  ButtonGroup,
+  Button,
+} from 'react-native-elements'
+
 export default class MenuScreen extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
-      currentScreen: 'drinks'
-    };
-  };
+      selectedIndex: 0
+    }
+    this.updateIndex = this.updateIndex.bind(this)
+  }
+
+  updateIndex (selectedIndex) {
+    this.setState({selectedIndex})
+  }
 
   static navigationOptions = {
     title: 'Menu',
+    headerStyle: {
+      backgroundColor: '#1A1A1D',
+    },
+    headerTitleStyle: {
+      color: '#C3073F',
+      textAlign: 'center',
+      flex: 1
+    }
   };
 
 
 
   render() {
-    if(this.state.currentScreen == 'drinks'){
+    const buttons = ['Напитки', 'Десерты', 'Еда']
+    const { selectedIndex } = this.state
+
+    if(this.state.selectedIndex == 0){
       return (
             <View style={styles.container}>
               <View style={styles.menu}>
-              <Button
-                containerStyle={{width:300,}}
-                onPress={this.onPressHandler('drinks')}
-                title="Напитки"
-                color="#841584"
-              />
-              <Button
-                buttonStyle={styles.button}
-                onPress={this.onPressHandler('dessert')}
-                title="Десерт"
-                color="#841584"
-              />
-              <Button
-                buttonStyle={styles.button}
-                onPress={this.onPressHandler('food')}
-                title="Еда"
-                color="#841584"
+              <ButtonGroup
+                onPress={this.updateIndex}
+                selectedIndex={selectedIndex}
+                buttons={buttons} 
+                containerStyle={{
+                 height: 50, width: "100%", borderRadius: 0, borderWidth: 0,
+                 marginLeft : 0, marginTop: 0, borderColor: '#C3073F', borderWidth: 2,
+                }}
+                innerBorderStyle={{width: 2, color: '#C3073F' }}
+               
+                buttonStyle={{ backgroundColor: '#29292e',  }}
+                selectedTextStyle={{color: '#C3073F', }}
+                selectedButtonStyle={{ backgroundColor: '#1A1A1D',  }}
               />
               </View>  
               <ScrollView style={styles.scroll}>
@@ -53,28 +69,24 @@ export default class MenuScreen extends React.Component {
           );
     }
 
-    if(this.state.currentScreen == 'dessert'){
+    if(this.state.selectedIndex == 1){
       return (
         <View style={styles.container}>
           <View style={styles.menu}>
-          <Button
-            buttonStyle={styles.button}
-            onPress={this.onPressHandler('drinks')}
-            title="Напитки"
-            color="#841584"
-          />
-          <Button
-            buttonStyle={styles.button}
-            onPress={this.onPressHandler('dessert')}
-            title="Десерт"
-            color="#841584"
-          />
-          <Button
-            buttonStyle={styles.button}
-            onPress={this.onPressHandler('food')}
-            title="Еда"
-            color="#841584"
-          />
+          <ButtonGroup
+                onPress={this.updateIndex}
+                selectedIndex={selectedIndex}
+                buttons={buttons} 
+                containerStyle={{
+                 height: 50, width: "100%", borderRadius: 0, borderWidth: 0,
+                 marginLeft : 0, marginTop: 0, borderColor: '#C3073F', borderWidth: 2,
+                }}
+                innerBorderStyle={{width: 2, color: '#C3073F' }}
+               
+                buttonStyle={{ backgroundColor: '#29292e',  }}
+                selectedTextStyle={{color: '#C3073F', }}
+                selectedButtonStyle={{ backgroundColor: '#1A1A1D',  }}
+              />
           </View>  
           <ScrollView style={styles.scroll}>
             <Image style={styles.cardImage} source={{ uri: 'https://pp.userapi.com/c830609/v830609322/603be/QhQhNzN_YgE.jpg'}}/>
@@ -83,28 +95,24 @@ export default class MenuScreen extends React.Component {
       );
     }
 
-    if(this.state.currentScreen == 'food'){
+    if(this.state.selectedIndex == 2){
       return (
         <View style={styles.container}>
           <View style={styles.menu}>
-          <Button
-            buttonStyle={styles.button}
-            onPress={this.onPressHandler('drinks')}
-            title="Напитки"
-            color="#841584"
-          />
-          <Button
-            buttonStyle={styles.button}
-            onPress={this.onPressHandler('dessert')}
-            title="Десерт"
-            color="#841584"
-          />
-          <Button
-            buttonStyle={styles.button}
-            onPress={this.onPressHandler('food')}
-            title="Еда"
-            color="#841584"
-          />
+          <ButtonGroup
+                onPress={this.updateIndex}
+                selectedIndex={selectedIndex}
+                buttons={buttons} 
+                containerStyle={{
+                 height: 50, width: "100%", borderRadius: 0, borderWidth: 0,
+                 marginLeft : 0, marginTop: 0, borderColor: '#C3073F', borderWidth: 2,
+                }}
+                innerBorderStyle={{width: 2, color: '#C3073F' }}
+               
+                buttonStyle={{ backgroundColor: '#29292e',  }}
+                selectedTextStyle={{color: '#C3073F', }}
+                selectedButtonStyle={{ backgroundColor: '#1A1A1D',  }}
+              />
           </View>  
           <ScrollView style={styles.scroll}>
             <Image style={styles.cardImage} source={{ uri: 'https://pp.userapi.com/c841532/v841532322/6139f/g1xlVELUyRA.jpg'}}/>
@@ -144,8 +152,12 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   button:{
-    width: '33%',
-    padding: 50,
-
+    backgroundColor: "rgba(92, 99,216, 1)",
+    padding: 15,
+    borderRadius: 0,
+  },
+  containerBtn:{
+    width: "33%",
+    margin: 0,
   }
 });
