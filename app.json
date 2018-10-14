@@ -24,7 +24,12 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.azumiarstudios.vegasapp"
+      "package": "com.azumiarstudios.vegasapp",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAt9AcLK-1iWQGPexmtfjgaCt59d3huBoQ"
+        }
+      }
     }
   }
 }

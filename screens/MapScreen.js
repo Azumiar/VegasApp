@@ -6,6 +6,7 @@ import {
   View,
 } from 'react-native';
 import TabBarIcon from '../components/TabBarIcon';
+import { MapView } from "expo";
 
 export default class MapScreen extends React.Component {
   static navigationOptions = {
@@ -51,7 +52,25 @@ export default class MapScreen extends React.Component {
             </View>
         </View>
         <View style={styles.map}>
-
+            <MapView
+                style={{
+                    flex: 1
+                }}
+                initialRegion={{
+                    latitude: 44.9532149,
+                    longitude: 34.1021065,
+                    latitudeDelta: 0.007,
+                    longitudeDelta: 0.007
+                }}>
+                    <MapView.Marker
+                        key={1}
+                        coordinate={{ 
+                            latitude: 44.9532149,
+                            longitude: 34.1021065,
+                        }}
+                        title={"Vegas"}
+                    />
+            </MapView>
         </View>
       </View>
     );
