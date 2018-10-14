@@ -20,49 +20,46 @@ export default class HomeScreen extends React.Component {
     }
   };
 
+  state = {
+    loading: true,
+    news: null,
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.scroll}>
-          <View style={styles.newsCard}>
-            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
-            <Text style={styles.newsCardText}>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            </Text>
-          </View>
-          <View style={styles.newsCard}>
-            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
-            <Text style={styles.newsCardText}>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            </Text>
-          </View>
-          <View style={styles.newsCard}>
-            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
-            <Text style={styles.newsCardText}>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            </Text>
-          </View>
-          <View style={styles.newsCard}>
-            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
-            <Text style={styles.newsCardText}>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            </Text>
-          </View>
-          <View style={styles.newsCard}>
-            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
-            <Text style={styles.newsCardText}>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            </Text>
-          </View>
-          <View style={styles.newsCard}>
-            <Image style={styles.newsCardImage} source={{ uri: 'https://pp.userapi.com/c840335/v840335980/4f7b7/orMDBzKlbyU.jpg'}}/>
-            <Text style={styles.newsCardText}>
-              Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
-            </Text>
-          </View>
+          {
+            !this.state.loading && this.state.news.map((item, idx) => {
+              return (
+                <View style={styles.newsCard} key={idx}>
+                  <Image style={styles.newsCardImage} source={{ uri: item.imageUrl}}/>
+                  <View style={styles.newsCardInfo}>
+                    <Text style={styles.newsCardHeader}>
+                      {item.title}
+                    </Text>
+                    <Text style={styles.newsCardDescription}>
+                      {item.description}
+                    </Text>
+                  </View>
+              </View>
+              );
+            })
+          }
         </ScrollView>
       </View>
     );
+  }
+
+  componentDidMount() {
+    fetch('http://192.168.0.103:3000/news')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          loading: false,
+          news: res,
+        })
+      })
   }
 }
 
@@ -89,11 +86,19 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
   },
-  newsCardText: {
+  newsCardDescription: {
+    color: '#efefef',
+    marginTop: 5,
+  },
+  newsCardHeader: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#efefef',
+  },
+  newsCardInfo: {
     padding: 10,
     backgroundColor: '#1a1a1d',
-    color: '#efefef',
     borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15
+    borderBottomRightRadius: 15,
   }
 });
