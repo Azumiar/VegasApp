@@ -6,6 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import config from '../config/clientConfig';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -52,7 +53,7 @@ export default class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://192.168.0.103:3000/news')
+    fetch(`http://${config.localIp}:3000/news`)
       .then(res => res.json())
       .then(res => {
         this.setState({

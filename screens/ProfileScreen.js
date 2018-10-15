@@ -6,6 +6,7 @@ import {
   View,
 } from 'react-native';
 import TabBarIcon from '../components/TabBarIcon';
+import config from '../config/clientConfig';
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -71,7 +72,7 @@ export default class ProfileScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://192.168.0.103:3000/user')
+    fetch(`http://${config.localIp}:3000/user`)
       .then(res => res.json())
       .then(res => {
         this.setState({
