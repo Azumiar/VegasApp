@@ -12,6 +12,8 @@ import {
   Button,
 } from 'react-native-elements'
 
+import AsyncImage from '../components/AsyncImage'
+
 export default class MenuScreen extends React.Component {
   constructor(){
     super();
@@ -56,14 +58,25 @@ export default class MenuScreen extends React.Component {
                  marginLeft : 0, marginTop: 0, borderColor: '#C3073F', borderWidth: 2,
                 }}
                 innerBorderStyle={{width: 2, color: '#C3073F' }}
-               
                 buttonStyle={{ backgroundColor: '#29292e',  }}
                 selectedTextStyle={{color: '#C3073F', }}
                 selectedButtonStyle={{ backgroundColor: '#1A1A1D',  }}
               />
               </View>  
               <ScrollView style={styles.scroll}>
-                <Image style={styles.cardImage} source={{ uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'}}/>
+                {/*<Image style={styles.cardImage} source={{ uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'}}/>*/}
+                <AsyncImage
+                  style={{
+                    width: '100%',
+                    height: 300,
+                    borderRadius: 15,
+                    marginTop: 30,
+                    marginBottom: 15,
+                  }}
+                  source={{
+                    uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'
+                  }}
+                  placeholderColor='#000'/>
               </ScrollView>
             </View>
           );
