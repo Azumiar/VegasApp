@@ -18,21 +18,16 @@ import {
       this.state = { loaded: false }
     }
   
-    render() {
-      const {
-        style,
-        source
-      } = this.props
-  
+    render() {  
       return (
         <View>
           <Image
-            source={source}
-            style={[style,{display: this.state.loaded ? "flex" : "none",}]}
+            source={this.props.source}
+            style={[this.props.style,{display: this.state.loaded ? "flex" : "none",}]}
             onLoad={this._onLoad} />
 
           {!this.state.loaded &&
-            <View style={styles.view}>
+            <View style={this.styles.view}>
               <ActivityIndicator size={75} color="#C3073F" />
             </View>
           }          
@@ -42,14 +37,16 @@ import {
   
     _onLoad = () => {
       this.setState(() => ({ loaded: true }))
-    }
+    } 
+
+    styles = StyleSheet.create({
+      view:{
+        justifyContent: "center",
+        height: this.props.style.height,
+        width: this.props.style.width,
+      },
+    })
   }
 
-  const styles = StyleSheet.create({
-    view:{
-      justifyContent: "center",
-      height: style.height,
-      width: style.width,
-    },
-  })
+
   
