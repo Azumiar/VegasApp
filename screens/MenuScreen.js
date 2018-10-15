@@ -76,7 +76,7 @@ export default class MenuScreen extends React.Component {
                   source={{
                     uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'
                   }}
-                  placeholderColor='#000'/>
+                  />
               </ScrollView>
             </View>
           );
