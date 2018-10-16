@@ -59,13 +59,13 @@ export default class MenuScreen extends React.Component {
         </View>  
         <ScrollView style={styles.scroll}>
           { this.state.selectedIndex == 0 && (
-              <AsyncImage style={styles.cardImage} source={{uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'}}/>
+              <AsyncImage style={cardImageStyle} source={{uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'}}/>
             ) || this.state.selectedIndex == 1 && (
-              <AsyncImage style={styles.cardImage} source={{uri: 'https://pp.userapi.com/c830609/v830609322/603be/QhQhNzN_YgE.jpg'}}/>
+              <AsyncImage style={cardImageStyle} source={{uri: 'https://pp.userapi.com/c830609/v830609322/603be/QhQhNzN_YgE.jpg'}}/>
             ) || this.state.selectedIndex == 2 && (
               <View>
-                <AsyncImage style={styles.cardImage} source={{uri: 'https://pp.userapi.com/c841532/v841532322/6139f/g1xlVELUyRA.jpg'}}/>
-                <AsyncImage style={styles.cardImage} source={{uri: 'https://pp.userapi.com/c841532/v841532322/613a8/LDppinAVKiM.jpg'}}/>
+                <AsyncImage style={cardImageStyle} source={{uri: 'https://pp.userapi.com/c841532/v841532322/6139f/g1xlVELUyRA.jpg'}}/>
+                <AsyncImage style={cardImageStyle} source={{uri: 'https://pp.userapi.com/c841532/v841532322/613a8/LDppinAVKiM.jpg'}}/>
               </View>
             )
           }
@@ -80,6 +80,14 @@ export default class MenuScreen extends React.Component {
     }
   }
 }
+const cardImageStyle = {
+    width: '100%',
+    height: 300,
+    borderRadius: 15,
+    marginTop: 30,
+    marginBottom: 15,
+  }
+
 
 const styles = StyleSheet.create({
   container: {
