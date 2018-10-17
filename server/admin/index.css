@@ -1,0 +1,64 @@
+body {
+    background: #6e6e72;
+}
+
+nav {
+    background: #1A1A1D;
+}
+
+.nav-wrapper a{
+    color: #C3073F;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h5 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.panel {
+    padding: 30px;
+    background: #1A1A1D;
+    color: #950740;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.349);
+    margin-bottom: 30;
+}
+
+.no-margin {
+    margin-bottom: 0;
+}
+
+.page-footer{
+    padding-top: 0;
+    background: #1A1A1D;
+    box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.footer-copyright .container {
+    color: #C3073F;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vegas-btn {
+    color: #950740;
+    border: 2px solid #950740;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.vegas-btn:hover {
+    color: #C3073F;;
+    border-color: #C3073F;
+}
+
+.vegas-btn:active {
+    background: transparent;
+}
