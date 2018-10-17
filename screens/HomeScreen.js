@@ -39,6 +39,9 @@ export default class HomeScreen extends React.Component {
                     <Text style={styles.newsCardHeader}>
                       {item.title}
                     </Text>
+                    <Text style={styles.newsCardDate}>
+                      {item.date}
+                    </Text>
                     <Text style={styles.newsCardDescription}>
                       {item.description}
                     </Text>
@@ -70,7 +73,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#6e6e72',
   },
   scroll: {
-    padding: 15,
     paddingTop: 0
   },
   newsCard: {
@@ -79,13 +81,10 @@ const styles = StyleSheet.create({
     marginBottom: 7.5,
     borderColor: '#666',
     borderWidth: 1,
-    borderRadius: 15,
   },
   newsCardImage: {
     width: '100%',
     height: 200,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
   },
   newsCardDescription: {
     color: '#efefef',
@@ -99,7 +98,10 @@ const styles = StyleSheet.create({
   newsCardInfo: {
     padding: 10,
     backgroundColor: '#1a1a1d',
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-  }
+  },
+  newsCardDate:{
+    fontSize: 12,
+    fontWeight: 'normal',
+    color: '#f2f2f2',
+  },
 });

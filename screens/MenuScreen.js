@@ -47,10 +47,7 @@ export default class MenuScreen extends React.Component {
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
           buttons={buttons} 
-          containerStyle={{
-            height: 50, width: "100%", borderRadius: 0, borderWidth: 0,
-            marginLeft : 0, marginTop: 0, borderColor: '#C3073F', borderWidth: 2,
-          }}
+          containerStyle={styles.btnGroupContainer}
           innerBorderStyle={{width: 2, color: '#C3073F' }}
           buttonStyle={{ backgroundColor: '#29292e',  }}
           selectedTextStyle={{color: '#C3073F', }}
@@ -83,10 +80,8 @@ export default class MenuScreen extends React.Component {
 
 const cardImageStyle = {
   width: '100%',
-  height: 300,
-  borderRadius: 15,
-  marginTop: 30,
-  marginBottom: 15,
+  height: 330,
+  marginTop: 7.5,
 }
 
 const styles = StyleSheet.create({
@@ -95,8 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#6e6e72',
   },
   scroll: {
-    padding: 15,
-    paddingTop: 0
+    padding: 0
   },
   menu:{
     flexDirection: 'row',    
@@ -104,7 +98,6 @@ const styles = StyleSheet.create({
   cardImage: {
     width: '100%',
     height: 300,
-    borderRadius: 15,
     marginTop: 30,
     marginBottom: 15,
   },
@@ -116,5 +109,16 @@ const styles = StyleSheet.create({
   containerBtn:{
     width: "33%",
     margin: 0,
-  }
+  },
+  btnGroupContainer:{
+    height: 50, 
+    width: "100%", 
+    borderRadius: 0, 
+    borderWidth: 0,
+    marginLeft : 0, 
+    marginTop: 0, 
+    marginBottom: 0,
+    borderColor: '#C3073F', 
+    borderWidth: 2,
+  },
 });

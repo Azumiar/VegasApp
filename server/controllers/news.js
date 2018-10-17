@@ -2,12 +2,14 @@ const news = [
     {
         title: "Для вчера сегодня завтра",
         description: "Невероятно но факт",
+        date: "17.10.2018",
         imageUrl: "https://pp.userapi.com/c849328/v849328927/9bf59/cCMqdnyYluA.jpg",
         url: "https://vk.com/simferopolvegas?w=wall-122738850_3528"
     },
     {
         title: "Для вчера сегодня завтра",
         description: "Невероятно но факт",
+        date: "17.10.2018",
         imageUrl: "https://pp.userapi.com/c849328/v849328927/9bf59/cCMqdnyYluA.jpg",
         url: "https://vk.com/simferopolvegas?w=wall-122738850_3528"
     }
