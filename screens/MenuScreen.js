@@ -80,14 +80,14 @@ export default class MenuScreen extends React.Component {
     }
   }
 }
-const cardImageStyle = {
-    width: '100%',
-    height: 300,
-    borderRadius: 15,
-    marginTop: 30,
-    marginBottom: 15,
-  }
 
+const cardImageStyle = {
+  width: '100%',
+  height: 300,
+  borderRadius: 15,
+  marginTop: 30,
+  marginBottom: 15,
+}
 
 const styles = StyleSheet.create({
   container: {
