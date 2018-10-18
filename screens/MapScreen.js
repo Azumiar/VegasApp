@@ -4,9 +4,11 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from 'react-native';
 import TabBarIcon from '../components/TabBarIcon';
 import { MapView } from "expo";
+import Communications from 'react-native-communications';
 
 export default class MapScreen extends React.Component {
   static navigationOptions = {
@@ -32,7 +34,9 @@ export default class MapScreen extends React.Component {
                     name={'md-call'}
                     size={22}
                 />
-                <Text style={styles.infoText}>+7(978) 713-92-05</Text>
+                <TouchableOpacity onPress={() => Communications.phonecall('+79787139205', true)}>
+                    <Text style={styles.infoText}>+7(978) 713-92-05</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.infoGroup}>
                 <TabBarIcon

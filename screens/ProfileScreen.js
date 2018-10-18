@@ -9,6 +9,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import config from '../config/clientConfig';
 import AsyncImage from '../components/AsyncImage';
 
+
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
     title: 'Личный кабинет',
