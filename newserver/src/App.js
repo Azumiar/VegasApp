@@ -41,11 +41,25 @@ class App extends Component {
   }
 
   onUserSubmit(data) {
-    console.log(data);
+    fetch("http://localhost:3000/api/users", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
   }
 
   onNewsSubmit(data) {
-    console.log(data);
+    fetch("http://localhost:3000/api/news",{
+      method: "POST",
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
   }
 }
 

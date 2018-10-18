@@ -19,6 +19,17 @@ function getNews(req, res) {
     res.send(JSON.stringify(news));
 }
 
+function addNews(req, res) {
+    news.push({
+        title: req.body.title,
+        description: req.body.description,
+        imageUrl: req.body.imageUrl,
+        url: req.body.url
+    });
+    console.log(news);
+}
+
 module.exports = {
-    getNews
+    getNews,
+    addNews
 }
