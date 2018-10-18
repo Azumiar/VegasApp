@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 import config from '../config/clientConfig';
+import AsyncImage from '../components/AsyncImage';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -26,6 +27,11 @@ export default class HomeScreen extends React.Component {
     news: null,
   }
 
+  newsCardImage = {
+    width: '100%',
+    height: 200,
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -34,7 +40,7 @@ export default class HomeScreen extends React.Component {
             !this.state.loading && this.state.news.map((item, idx) => {
               return (
                 <View style={styles.newsCard} key={idx}>
-                  <Image style={styles.newsCardImage} source={{ uri: item.imageUrl}}/>
+                  <AsyncImage style={this.newsCardImage} source={{ uri: item.imageUrl}}/>
                   <View style={styles.newsCardInfo}>
                     <Text style={styles.newsCardHeader}>
                       {item.title}
@@ -56,7 +62,7 @@ export default class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://${config.localIp}:3000/news`)
+    fetch(`http://${config.localIp}:3000/api/news`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -81,10 +87,6 @@ const styles = StyleSheet.create({
     marginBottom: 7.5,
     borderColor: '#666',
     borderWidth: 1,
-  },
-  newsCardImage: {
-    width: '100%',
-    height: 200,
   },
   newsCardDescription: {
     color: '#efefef',

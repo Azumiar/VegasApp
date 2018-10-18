@@ -9,7 +9,7 @@ import {
   ButtonGroup,
 } from 'react-native-elements'
 
-import AsyncImage from '../components/AsyncImage'
+import AsyncImage from '../components/AsyncImage';
 
 export default class MenuScreen extends React.Component {
   constructor(){
@@ -46,14 +46,14 @@ export default class MenuScreen extends React.Component {
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
-          buttons={buttons} 
+          buttons={buttons}
           containerStyle={styles.btnGroupContainer}
           innerBorderStyle={{width: 2, color: '#C3073F' }}
           buttonStyle={{ backgroundColor: '#29292e',  }}
           selectedTextStyle={{color: '#C3073F', }}
           selectedButtonStyle={{ backgroundColor: '#1A1A1D',  }}
         />
-        </View>  
+        </View>
         <ScrollView style={styles.scroll}>
           { this.state.selectedIndex == 0 && (
               <AsyncImage style={cardImageStyle} source={{uri: 'https://pp.userapi.com/c830609/v830609322/603c7/JayPNsKGe5M.jpg'}}/>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     padding: 0
   },
   menu:{
-    flexDirection: 'row',    
+    flexDirection: 'row',
   },
   cardImage: {
     width: '100%',
@@ -111,14 +111,14 @@ const styles = StyleSheet.create({
     margin: 0,
   },
   btnGroupContainer:{
-    height: 50, 
-    width: "100%", 
-    borderRadius: 0, 
+    height: 50,
+    width: "100%",
+    borderRadius: 0,
     borderWidth: 0,
-    marginLeft : 0, 
-    marginTop: 0, 
+    marginLeft : 0,
+    marginTop: 0,
     marginBottom: 0,
-    borderColor: '#C3073F', 
+    borderColor: '#C3073F',
     borderWidth: 2,
   },
 });
