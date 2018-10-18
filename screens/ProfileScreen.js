@@ -51,17 +51,17 @@ export default class ProfileScreen extends React.Component {
           <View style={styles.row}>
             <View style={[styles.cell,]}>
               {
-                this.state.checks>=1 ? <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>:''
+                this.state.checks=="4" && <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>
               } 
             </View>
             <View style={styles.cell}>
               {
-                this.state.checks>=2 ? <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>:''
+                this.state.checks>=2 && <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>
               } 
             </View>
             <View style={[styles.cell,]}>
               {
-                this.state.checks>=3 ? <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>:''
+                this.state.checks>=3 && <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>
               } 
             </View>
           </View>
@@ -69,17 +69,17 @@ export default class ProfileScreen extends React.Component {
           <View style={styles.row}>
             <View style={[styles.cell, ]}>
               {
-                this.state.checks>=4 ? <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>:''
+                this.state.checks>=4 && <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>
               } 
             </View>
             <View style={styles.cell}>
               {
-                this.state.checks>=5 ? <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>:''
+                this.state.checks>=5 && <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>
               } 
             </View>
             <View style={[styles.cell,]}>
               {
-                this.state.checks==6 ? <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>:''
+                this.state.checks==6 && <TabBarIcon focused={true} name={'md-checkmark-circle'} size={60}/>
               } 
             </View>
           </View>

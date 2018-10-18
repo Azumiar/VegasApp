@@ -5,9 +5,11 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from 'react-native';
 import config from '../config/clientConfig';
 import AsyncImage from '../components/AsyncImage';
+import Communications from 'react-native-communications';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -39,20 +41,22 @@ export default class HomeScreen extends React.Component {
           {
             !this.state.loading && this.state.news.map((item, idx) => {
               return (
-                <View style={styles.newsCard} key={idx}>
-                  <AsyncImage style={this.newsCardImage} source={{ uri: item.imageUrl}}/>
-                  <View style={styles.newsCardInfo}>
-                    <Text style={styles.newsCardHeader}>
-                      {item.title}
-                    </Text>
-                    <Text style={styles.newsCardDate}>
-                      {item.date}
-                    </Text>
-                    <Text style={styles.newsCardDescription}>
-                      {item.description}
-                    </Text>
-                  </View>
-              </View>
+                <TouchableOpacity onPress={() => Communications.web(item.url)}>
+                  <View style={styles.newsCard} key={idx}>
+                    <AsyncImage style={this.newsCardImage} source={{ uri: item.imageUrl}}/>
+                    <View style={styles.newsCardInfo}>
+                      <Text style={styles.newsCardHeader}>
+                        {item.title}
+                      </Text>
+                      <Text style={styles.newsCardDate}>
+                        {item.date}
+                      </Text>
+                      <Text style={styles.newsCardDescription}>
+                        {item.description}
+                      </Text>
+                    </View>
+                </View>
+              </TouchableOpacity>
               );
             })
           }
