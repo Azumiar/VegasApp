@@ -52,7 +52,9 @@ export default class MapScreen extends React.Component {
                     name={'md-link'}
                     size={22}
                 />
-                <Text style={styles.infoText}>vk.com/vegas</Text>
+                <TouchableOpacity onPress={() => Communications.web('https://vk.com/simferopolvegas')}>
+                    <Text style={styles.infoText}>vk.com/simferopolvegas</Text>
+                </TouchableOpacity>
             </View>
         </View>
         <View style={styles.map}>
