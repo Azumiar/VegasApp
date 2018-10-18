@@ -1,0 +1,10 @@
+.footer-copyright .container {
+    color: #C3073F;
+}
+
+.page-footer{
+    padding-top: 0;
+    background: #1A1A1D;
+    box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.2);
+    margin-top: auto;
+}

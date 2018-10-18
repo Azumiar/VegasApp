@@ -1,0 +1,39 @@
+h5 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.panel, .modal, .modal .modal-footer {
+    background: #1A1A1D;
+    color: #950740;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.349);
+}
+
+.modal-footer .btn {
+    color: #950740;
+    border: 2px solid #950740;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 7px 14px;
+    font-size: 16px;
+}
+
+.panel {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-margin {
+    margin-bottom: 0;
+}
+
+.no-news {
+    text-align: center;
+    font-size: 26px;
+}

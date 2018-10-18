@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import TabBarIcon from '../components/TabBarIcon';
 import config from '../config/clientConfig';
+import AsyncImage from '../components/AsyncImage';
 
 export default class ProfileScreen extends React.Component {
   static navigationOptions = {
@@ -27,12 +28,20 @@ export default class ProfileScreen extends React.Component {
     name: null,
   }
 
+  avatar = {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderColor: '#C3073F',
+    borderWidth: 1,
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.userContainer}>
           <View style={styles.userInfo}>
-              <Image style={styles.avatar} source={{ uri: this.loading ? '' : this.state.avatarUrl }}/>
+              <AsyncImage style={this.avatar} source={{ uri: this.loading ? '' : this.state.avatarUrl }}/>
               <Text style={styles.userName}>{this.loading ? 'Загрузка...' : this.state.name}</Text>
           </View>
         </View>
@@ -66,9 +75,10 @@ export default class ProfileScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://${config.localIp}:3000/user`)
+    fetch(`http://${config.localIp}:3000/api/users`)
       .then(res => res.json())
       .then(res => {
+        res = res[0];
         this.setState({
           loading: false,
           name: res.name,
@@ -81,18 +91,11 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#6e6e72', 
+    backgroundColor: '#6e6e72',
   },
   userInfo: {
     flexDirection: 'row',
     padding: 20,
-  },
-  avatar: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    borderColor: '#C3073F',
-    borderWidth: 1,
   },
   userName: {
     flex: 1,

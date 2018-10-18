@@ -15,7 +15,7 @@ export default class AsyncImage extends Component {
     this.state = { loaded: false }
   }
 
-  render() {  
+  render() {
     return (
       <View>
         <Image
@@ -27,14 +27,14 @@ export default class AsyncImage extends Component {
           <View style={this.styles.view}>
             <ActivityIndicator size={75} color="#C3073F" />
           </View>
-        }          
+        }
       </View>
     )
   }
 
   _onLoad = () => {
     this.setState(() => ({ loaded: true }))
-  } 
+  }
 
   styles = StyleSheet.create({
     view:{

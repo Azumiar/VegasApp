@@ -1,0 +1,23 @@
+h5 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.panel {
+    padding: 30px;
+    background: #1A1A1D;
+    color: #950740;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.349);
+    margin-bottom: 30px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-users {
+    text-align: center;
+    font-size: 26px;
+}
+

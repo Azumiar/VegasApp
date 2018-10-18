@@ -1,0 +1,18 @@
+.vegas-btn {
+    color: #950740;
+    border: 2px solid #950740;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 7px 14px;
+    font-size: 16px;
+}
+
+.vegas-btn:hover {
+    color: #C3073F;;
+    border-color: #C3073F;
+}
+
+.margin-right {
+    margin-right: .75rem;
+}
