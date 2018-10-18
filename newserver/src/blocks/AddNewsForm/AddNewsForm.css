@@ -1,0 +1,12 @@
+label.active {
+    color: #950740 !important;
+}
+
+input:focus {
+    border-bottom: 1px solid #950740 !important;
+    box-shadow: 0 1px 0 0 #950740 !important;
+}
+
+input {
+    color: #fff;
+}

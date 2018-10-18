@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     res.sendFile(__dirname +  '/admin/index.html');
 });
 
-router.get('/user', Users.getUser);
-router.get('/news', News.getNews);
+router.get('/api/users', Users.getUser);
+router.get('/api/news', News.getNews);
 
 module.exports = router;
